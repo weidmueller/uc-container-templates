@@ -6,7 +6,7 @@
 			"title": "Teamviewer APP",
 			"description": "A container to access Weidmüller Devies from the Teamviewer IoT portal",
 			"note": "Deploys the Teamviewer IoT Agent together with a connector to the u-control global variables.",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/stacks/logo.png",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/stacks/teamviewer/logo.png",
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates.git",

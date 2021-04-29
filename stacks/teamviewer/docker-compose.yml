@@ -1,0 +1,35 @@
+version: "2"
+services:
+    agent:
+      image: weidmuellerucontrol.azurecr.io/tviot-agent:alpha
+      hostname: ${HOSTNAME}                    # Choose your own hostname
+      container_name: teamviewer-agent
+      cpu_quota: 80000
+      environment:
+        SERIAL_NUMBER_DOCKER_CONTAINER: ${HOSTNAME} # Please fill in a serial number with at least 8 ASCII characters  
+        ENABLE_APP_CONTROL: 1                       # Activate AppControl function on the agent
+        APP_CONTROL_PORT: 80                        # Port for the web server to which the agent sholud connected
+        APP_CONTROL_URL_SUFFIX:                     # Suffix for the AppControl Url
+        APP_CONTROL_NAVIGATION_PANEL: 0             # Enable AppControl navigation panel
+        ENABLE_REMOTE_TERMINAL: 0                   # Activate Remote Terminal function on the agent
+        ENABLE_APP_CONNECTED: 0                     # Activate Remote AppConnected (Port Forwarding) function on the agent You also need to add at least one port to APP_CONNECTED_ALLOWED_PORTS
+        APP_CONNECTED_ALLOWED_PORTS: 443              # You can add more then one port to the variable. Please do it like this '22 443 80' 
+        ASSIGNMENT_API_TOKEN: ${ASSIGNMENT_API_TOKEN}                      # Assignment API tocken to assign the agent to an TeamViewer account. Please put the token betweeen '<TOKEN>' 
+        ASSIGNMENT_GROUP_NAME: ${ASSIGNMENT_GROUP_NAME}                     # TeamViewer Computer and Contact group, where the agent should be part of it. Please put the name betweeen '<GROUP NAME>'
+      network_mode: "host"
+      volumes:
+        - tviot-persistent:/tmp/teamviewer-iot-agent
+
+
+    node-red:
+      image: weidmuellerucontrol.azurecr.io/uc-tviot-connector:alpha
+      container_name: uc-tviot-connector 
+      cpu_quota: 25000
+      environment:
+        SENSOR_NAME: ${SENSOR_NAME}  # Name of the sensor as it is visible in teamviewer iot portal
+        VAR_PREFIX: ${VAR_PREFIX}     # optional prefix which can be used to publish only a subset of variables, variables to be be published should start with VAR_PREFIX
+      network_mode: "host"
+      depends_on: 
+        -  "agent"
+      volumes:
+        -  tviot-persistent:/tviot      

@@ -1,41 +1,198 @@
 {
 	"version": "2",
-	"templates": [
+	"templates": [{
+			"type": 1,
+			"title": "Azure IoT Edge",
+			"description": "Publish u-control global variables to Azure IoT Hub",
+			"note": "Deploys an Azure IoT Edge Container",
+			"categories": ["Weidmueller", "IoT"],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
+			"image": "azure-iot-edge:1.1.1-alpha",
+			"registry": "wmucrel.azurecr.io",
+			"env": [{
+				"name": "DEVICE_CONNECTION_STR",
+				"label": "Device Connection String",
+				"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
+			}],
+			"network": "bridge",
+			"volumes": [{
+				"/var/run/docker.sock": "/var/run/docker.sock"
+			}]
+		},
+		{
+			"type": 1,
+			"title": "Node-RED for u-create web",
+			"description": "Flow-based programming tool",
+			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables. Node-RED is hosted under port 1881.",
+			"categories": ["Weidmueller"],
+			"restart_policy": "unless-stopped",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
+			"image": "wm-node-red:alpha",
+			"registry": "wmucrel.azurecr.io",
+			"network": "host",
+			"volumes": [{
+				"wm-node-red": "/data"
+			}]
+		},
 		{
 			"type": 3,
-			"title": "Teamviewer APP",
-			"description": "A container to access Weidmüller Devies from the Teamviewer IoT portal",
-			"note": "Deploys the Teamviewer IoT Agent together with a connector to the u-control global variables.\nEULA: https://www.teamviewer.com/en/eula/",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/stacks/teamviewer/logo.png",
+			"title": "TeamViewer IoT Agent & Connector for u-create web",
+			"description": "Publish u-control global variables to the TeamViewer IoT Service",
+			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
 			"platform": "linux",
 			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates.git",
+				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/teamviewer/docker-compose.yml"
 			},
 			"env": [{
-				"name": "HOSTNAME",
-				"label": "Device name",
-				"description": "Name of the IOT Device as it is registred in the Teamviewer IoT"
-			},
-			{
-				"name": "ASSIGNMENT_API_TOKEN",
-				"label": "Teamviewer IoT Assignment Token",
-				"description": "Teamviewer IoT Assignment Token"
-			},
-			{
-				"name": "ASSIGNMENT_GROUP_NAME",
-				"label": "Teamviewer IoT Assignment Group Name",
-				"description": "Name of the Assignment Group where the device is registered"
-			},
-			{
-				"name": "SENSOR_NAME",
-				"label": "Teamviewer Sensor name",
-				"description": "Name of the sensor under which the metrics are published. If you leave it empty a default name is generated."
-			},
-			{
-				"name": "VAR_PREFIX",
-				"label": "Prefix to filter global variable list",
-				"description": "Only global variables starting with the prefix are publised to the Teamviewer IoT portal. If you leave it empty all variables published."
+					"name": "ACCEPT_EULA",
+					"label": "Accept TeamViewer EULA",
+					"description": "Please accept the TeamViewer EULA to use the Teamviewer IoT Agent.",
+					"select": [{
+							"text": "Yes, I've read and accept the TeamViewer EULA",
+							"value": "YES"
+						},
+						{
+							"text": "No, I do not accept the TeamViewer EULA",
+							"value": "NO",
+							"default": true
+						}
+					]
+				}, {
+					"name": "ASSIGNMENT_API_TOKEN",
+					"label": "TeamViewer IoT Assignment Token",
+					"description": "The assignment token must be obtained from the TeamViewer IoT Management Console."
+				},
+				{
+					"name": "ASSIGNMENT_GROUP_NAME",
+					"label": "TeamViewer IoT Assignment Group Name",
+					"description": "The device will be assigned to this group in the TeamViewer IoT Device Inventory."
+				},
+				{
+					"name": "HOSTNAME",
+					"label": "Device Name",
+					"description": "The device will be registered in the TeamViewer IoT Device Inventory under this name.",
+					"default": "Weidmüller IoT Device"
+				},
+				{
+					"name": "SENSOR_NAME",
+					"label": "TeamViewer Sensor name",
+					"description": "Name of the sensor under which the metrics of this device are published. If left empty, a default name is generated."
+				},
+				{
+					"name": "UPDATE_INTERVAL",
+					"label": "Update Interval",
+					"description": "Metrics are published at this interval. An interval of 1000ms or larger is recommended. If left empty, 1000ms are used.",
+					"select": [{
+							"text": "1s",
+							"value": "1000"
+						},
+						{
+							"text": "2s",
+							"value": "2000"
+						}, {
+							"text": "5s",
+							"value": "5000",
+							"default": true
+						}, {
+							"text": "10s",
+							"value": "10000"
+						}, {
+							"text": "1m",
+							"value": "60000"
+						}, {
+							"text": "10m",
+							"value": "600000"
+						}
+					]
+				},
+				{
+					"name": "VAR_PREFIX",
+					"label": "Prefix to filter global variable list",
+					"description": "Only global variables starting with this prefix are published as metrics. Leave empty to publish all global variables."
+				}
+			]
+		}, {
+			"type": 1,
+			"title": "TeamViewer IoT Agent (standalone)",
+			"description": "Connect to the Teamviewer IoT Service",
+			"note": "Deploys the TeamViewer IoT Agent standalone. Multiple Sensors or Connectors might connect to this agent. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
+			"categories": ["IoT"],
+			"restart_policy": "unless-stopped",
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
+			"image": "tviot-agent:alpha",
+			"registry": "wmucrel.azurecr.io",
+			"name": "teamviewer-agent",
+			"env": [{
+					"name": "ACCEPT_EULA",
+					"label": "Accept TeamViewer EULA",
+					"description": "Please accept the TeamViewer EULA to use the Teamviewer IoT Agent.",
+					"select": [{
+							"text": "Yes, I've read and accept the TeamViewer EULA",
+							"value": "YES"
+						},
+						{
+							"text": "No, I do not accept the TeamViewer EULA",
+							"value": "NO",
+							"default": true
+						}
+					]
+				}, {
+					"name": "ASSIGNMENT_API_TOKEN",
+					"label": "TeamViewer IoT Assignment Token",
+					"description": "The assignment token must be obtained from the TeamViewer IoT Management Console."
+				},
+				{
+					"name": "ASSIGNMENT_GROUP_NAME",
+					"label": "TeamViewer IoT Assignment Group Name",
+					"description": "The device will be assigned to this group in the TeamViewer IoT Device Inventory."
+				},
+				{
+					"name": "HOSTNAME",
+					"label": "Device Name",
+					"description": "The device will be registered in the TeamViewer IoT Device Inventory under this name.",
+					"default": "Weidmüller IoT Device"
+				}, {
+					"name": "SERIAL_NUMBER_DOCKER_CONTAINER",
+					"default": "wm-tviot-agent",
+					"preset": true
+				}, {
+					"name": "ENABLE_APP_CONTROL",
+					"default": 1,
+					"preset": true
+				}, {
+					"name": "APP_CONTROL_PORT",
+					"default": 80,
+					"preset": true
+				}, {
+					"name": "APP_CONTROL_URL_SUFFIX",
+					"default": "",
+					"preset": true
+				}, {
+					"name": "APP_CONTROL_NAVIGATION_PANEL",
+					"default": 0,
+					"preset": true
+				}, {
+					"name": "ENABLE_REMOTE_TERMINAL",
+					"default": 0,
+					"preset": true
+				}, {
+					"name": "ENABLE_APP_CONNECTED",
+					"default": 0,
+					"preset": true
+				}, {
+					"name": "APP_CONNECTED_ALLOWED_PORTS",
+					"default": 443,
+					"preset": true
+				}
+			],
+			"network": "host",
+			"volumes": [{
+				"tviot-persistent": "/tviot"
 			}]
 		}
 	]

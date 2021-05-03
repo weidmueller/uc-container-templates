@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 102.39026 102.3902"
+   version="1.1"
+   id="svg136"
+   sodipodi:docname="TV_IoT_square_red_RGB.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   width="102.39026"
+   height="102.3902">
+  <metadata
+     id="metadata140">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1361"
+     id="namedview138"
+     showgrid="false"
+     inkscape:zoom="3.1949609"
+     inkscape:cx="200.11352"
+     inkscape:cy="21.24613"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="open_subline" />
+  <defs
+     id="defs78">
+    <style
+       id="style76">.cls-1{fill:#fff;}</style>
+  </defs>
+  <g
+     id="Ebene_2"
+     data-name="Ebene 2">
+    <g
+       id="open_subline"
+       data-name="open subline">
+      <polygon
+         class="cls-1"
+         points="65.195,46.049 61.403,36.84 89.735,51.195 61.403,65.551 65.195,56.341 37.3,56.341 41.062,65.551 12.655,51.195 41.092,36.84 37.3,46.049 "
+         id="polygon86"
+         style="fill:#ad003a;fill-opacity:0.968627" />
+      <path
+         class="cls-1"
+         d="M 96.3916,0 H 5.9986 A 6.01624,6.01624 0 0 0 0,5.9986 v 90.393 a 6.01624,6.01624 0 0 0 5.9986,5.9986 h 90.393 a 6.01625,6.01625 0 0 0 5.99866,-5.9986 V 5.9986 A 6.01625,6.01625 0 0 0 96.3916,0 Z M 51.19513,93.403 A 42.20786,42.20786 0 1 1 93.403,51.19513 42.20785,42.20785 0 0 1 51.19513,93.403 Z"
+         id="path88"
+         style="fill:#ad003a;fill-opacity:0.968627" />
+    </g>
+  </g>
+</svg>

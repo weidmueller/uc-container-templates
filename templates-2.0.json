@@ -79,13 +79,13 @@
 				},
 				{
 					"name": "SENSOR_NAME",
-					"label": "TeamViewer Sensor name",
+					"label": "TeamViewer Sensor Name",
 					"description": "Name of the sensor under which the metrics of this device are published. If left empty, a default name is generated."
 				},
 				{
 					"name": "UPDATE_INTERVAL",
 					"label": "Update Interval",
-					"description": "Metrics are published at this interval. An interval of 1000ms or larger is recommended. If left empty, 1000ms are used.",
+					"description": "Metrics are published periodically at this interval.",
 					"select": [{
 							"text": "1s",
 							"value": "1000"
@@ -111,7 +111,7 @@
 				},
 				{
 					"name": "VAR_PREFIX",
-					"label": "Prefix to filter global variable list",
+					"label": "Filter Global Variables by Prefix",
 					"description": "Only global variables starting with this prefix are published as metrics. Leave empty to publish all global variables."
 				}
 			]

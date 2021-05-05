@@ -8,6 +8,7 @@
 			"categories": ["Weidmueller", "IoT", "Azure"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
+			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/azure-iot-edge/dev/1.0/docker-compose.yml"
@@ -22,10 +23,11 @@
 			"type": 3,
 			"title": "Node-RED for u-create web",
 			"description": "Flow-based programming tool",
-			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables. Node-RED is hosted under port 1881.",
+			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.",
 			"categories": ["Weidmueller"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
+			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/wm-node-red/dev/1.0/docker-compose.yml"
@@ -33,7 +35,8 @@
 			"env": [{
 				"name": "PORT",
 				"label": "Web Server Port",
-				"description": "The TCP port that the Node-RED web server is listening on."
+				"description": "The TCP port that the Node-RED web server is listening on.",
+				"default": "1881"
 			}]
 		},
 		{
@@ -44,6 +47,7 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
 			"categories": ["Weidmueller", "TeamViewer", "IoT"],
 			"platform": "linux",
+			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/teamviewer/dev/1.0/docker-compose.yml"
@@ -118,8 +122,8 @@
 			]
 		}, {
 			"type": 1,
-			"title": "TeamViewer IoT Agent (standalone)",
-			"description": "Connect to the Teamviewer IoT Service",
+			"title": "TeamViewer IoT Agent",
+			"description": "Deploys the TeamViewer IoT Agent standalone, e.g. on IOT-GW30",
 			"note": "Deploys the TeamViewer IoT Agent standalone. Multiple Sensors or Connectors might connect to this agent. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
 			"categories": ["IoT"],
 			"restart_policy": "unless-stopped",

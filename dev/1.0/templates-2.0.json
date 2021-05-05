@@ -10,7 +10,7 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/azure-iot-edge/docker-compose.yml"
+				"stackfile": "stacks/azure-iot-edge/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "DEVICE_CONNECTION_STR",
@@ -24,12 +24,11 @@
 			"description": "Flow-based programming tool",
 			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables. Node-RED is hosted under port 1881.",
 			"categories": ["Weidmueller"],
-			"restart_policy": "unless-stopped",
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/azure-iot-edge/docker-compose.yml"
+				"stackfile": "stacks/wm-node-red/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "PORT",
@@ -47,7 +46,7 @@
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/teamviewer/docker-compose.yml"
+				"stackfile": "stacks/teamviewer/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 					"name": "ACCEPT_EULA",
@@ -126,8 +125,8 @@
 			"restart_policy": "unless-stopped",
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
-			"image": "tviot-agent:alpha",
-			"registry": "wmucrel.azurecr.io",
+			"image": "tviot-agent:2.14.13-1.0-alpha.1",
+			"registry": "wmucdev.azurecr.io",
 			"name": "teamviewer-agent",
 			"env": [{
 					"name": "ACCEPT_EULA",

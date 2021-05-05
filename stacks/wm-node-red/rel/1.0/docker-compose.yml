@@ -2,7 +2,7 @@ version: "2"
 
 services:
   wm-node-red:
-    image: weidmuellerucontrol.azurecr.io/wm-node-red:alpha 
+    image: wmucrel.azurecr.io/wm-node-red:1.1.2-1.0
     container_name: wm-node-red 
     network_mode: "host"
     volumes:

@@ -1,7 +1,7 @@
 version: "2"
 services:
     agent:
-      image: weidmuellerucontrol.azurecr.io/tviot-agent:alpha
+      image: wmucdev.azurecr.io/tviot-agent:2.14.13-1.0-alpha.1
       hostname: ${HOSTNAME}                             # Choose your own hostname
       container_name: teamviewer-agent
       cpu_quota: 80000
@@ -24,12 +24,12 @@ services:
 
 
     node-red:
-      image: weidmuellerucontrol.azurecr.io/uc-tviot-connector:alpha
+      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.0-alpha.1
       container_name: uc-tviot-connector 
       cpu_quota: 25000
       restart: unless-stopped
       environment:
-        SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in teamviewer iot portal        
+        SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in TeamViewer IoT portal        
         UPDATE_INTERVAL: ${UPDATE_INTERVAL}             # Interval at which metric values are updated in milli-seconds, must be 50ms or larger. 
         VAR_PREFIX: ${VAR_PREFIX}                       # Optional prefix which can be used to publish only a subset of variables. If set, only variables starting with VAR_PREFIX are published.
       network_mode: "host"

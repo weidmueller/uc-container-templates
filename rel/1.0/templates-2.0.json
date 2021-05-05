@@ -34,7 +34,7 @@
 				"name": "PORT",
 				"label": "Web Server Port",
 				"description": "The TCP port that the Node-RED web server is listening on.",
-				"default": 1881
+				"default": "1881"
 			}]
 		},
 		{

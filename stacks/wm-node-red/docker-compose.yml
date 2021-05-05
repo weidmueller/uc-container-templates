@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  wm-node-red:
+    image: weidmuellerucontrol.azurecr.io/wm-node-red:alpha 
+    container_name: wm-node-red 
+    network_mode: "host"
+    volumes:
+      - wm-node-red:/data
+    environment: 
+              - PORT=${PORT}

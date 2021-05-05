@@ -1,27 +1,25 @@
 {
 	"version": "2",
 	"templates": [{
-			"type": 1,
+			"type": 3,
 			"title": "Azure IoT Edge",
-			"description": "Publish u-control global variables to Azure IoT Hub",
-			"note": "Deploys an Azure IoT Edge Container",
-			"categories": ["Weidmueller", "IoT"],
+			"description": "Azure IoT Edge Runtime",
+			"note": "Deploys the Runtime for Azure IoT Edge 1.1 on Debian Buster",
+			"categories": ["Weidmueller", "IoT", "Azure"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
-			"image": "azure-iot-edge:1.1.1-alpha",
-			"registry": "wmucrel.azurecr.io",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/azure-iot-edge/docker-compose.yml"
+			},
 			"env": [{
 				"name": "DEVICE_CONNECTION_STR",
 				"label": "Device Connection String",
 				"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
-			}],
-			"network": "bridge",
-			"volumes": [{
-				"/var/run/docker.sock": "/var/run/docker.sock"
 			}]
 		},
 		{
-			"type": 1,
+			"type": 3,
 			"title": "Node-RED for u-create web",
 			"description": "Flow-based programming tool",
 			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables. Node-RED is hosted under port 1881.",
@@ -29,11 +27,14 @@
 			"restart_policy": "unless-stopped",
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
-			"image": "wm-node-red:alpha",
-			"registry": "wmucrel.azurecr.io",
-			"network": "host",
-			"volumes": [{
-				"wm-node-red": "/data"
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/azure-iot-edge/docker-compose.yml"
+			},
+			"env": [{
+				"name": "PORT",
+				"label": "Web Server Port",
+				"description": "The TCP port that the Node-RED web server is listening on."
 			}]
 		},
 		{
@@ -42,6 +43,7 @@
 			"description": "Publish u-control global variables to the TeamViewer IoT Service",
 			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
+			"categories": ["Weidmueller", "TeamViewer", "IoT"],
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",

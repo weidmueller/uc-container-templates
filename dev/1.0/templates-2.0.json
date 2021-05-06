@@ -1,6 +1,30 @@
 {
 	"version": "2",
 	"templates": [{
+			"type": 1,
+			"title": "Hello-World",
+			"description": "Hello-World, Template Type 1 (Container)",
+			"note": "For Testing",
+			"categories": ["Debug"],
+			"platform": "linux",
+			"image": "hello-world",
+			"registry": "wmucdev.azurecr.io",
+			"name": "teamviewer-agent"
+		},
+		{
+			"type": 3,
+			"title": "Hello-World Stack",
+			"description": "Hello-World, Template Type 3 (Compose)",
+			"note": "For Testing",
+			"categories": ["Debug"],
+			"platform": "linux",
+			"registry": "wmucdev.azurecr.io",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
+			}
+		}, 
+		{
 			"type": 3,
 			"title": "Azure IoT Edge",
 			"description": "Azure IoT Edge Runtime",

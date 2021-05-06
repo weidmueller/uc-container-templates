@@ -8,6 +8,7 @@
 			"categories": ["Weidmueller", "IoT", "Azure"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
+			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/azure-iot-edge/rel/1.0/docker-compose.yml"
@@ -26,6 +27,7 @@
 			"categories": ["Weidmueller"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
+			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/wm-node-red/rel/1.0/docker-compose.yml"
@@ -34,7 +36,7 @@
 				"name": "PORT",
 				"label": "Web Server Port",
 				"description": "The TCP port that the Node-RED web server is listening on.",
-				"default": 1881
+				"default": "1881"
 			}]
 		},
 		{
@@ -45,6 +47,7 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
 			"categories": ["Weidmueller", "TeamViewer", "IoT"],
 			"platform": "linux",
+			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/teamviewer/rel/1.0/docker-compose.yml"

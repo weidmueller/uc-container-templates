@@ -4,21 +4,20 @@
 			"type": 1,
 			"title": "Hello-World",
 			"description": "Hello-World, Template Type 1 (Container)",
-			"note": "For Testing",
-			"categories": ["Debug"],
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>Small Hello-World Image, useful for Testing Portainer. Deploys a single container.",
+			"categories": ["UC20-WL2000", "IOT-GW30", "Debug"],
 			"platform": "linux",
 			"image": "hello-world",
 			"registry": "wmucdev.azurecr.io",
-			"name": "teamviewer-agent"
+			"name": "hello-world"
 		},
 		{
 			"type": 3,
 			"title": "Hello-World Stack",
 			"description": "Hello-World, Template Type 3 (Compose)",
-			"note": "For Testing",
-			"categories": ["Debug"],
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>Small Hello-World Image, useful for Testing Portainer. Deploys a Stack from a compose file.",
+			"categories": ["UC20-WL2000", "IOT-GW30","Debug"],
 			"platform": "linux",
-			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
@@ -28,11 +27,10 @@
 			"type": 3,
 			"title": "Azure IoT Edge",
 			"description": "Azure IoT Edge Runtime",
-			"note": "Deploys the Runtime for Azure IoT Edge 1.1 on Debian Buster",
-			"categories": ["Weidmueller", "IoT", "Azure"],
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>Deploys the Runtime for Azure IoT Edge 1.1 on Debian Buster",
+			"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
-			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/azure-iot-edge/dev/1.0/docker-compose.yml"
@@ -47,11 +45,10 @@
 			"type": 3,
 			"title": "Node-RED for u-create web",
 			"description": "Flow-based programming tool",
-			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.",
-			"categories": ["Weidmueller"],
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.",
+			"categories": ["UC20-WL2000", "IOT-GW30"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
-			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/wm-node-red/dev/1.0/docker-compose.yml"
@@ -67,11 +64,10 @@
 			"type": 3,
 			"title": "TeamViewer IoT Agent & Connector for u-create web",
 			"description": "Publish u-control global variables to the TeamViewer IoT Service",
-			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
-			"categories": ["Weidmueller", "TeamViewer", "IoT"],
+			"categories": ["UC20-WL2000", "TeamViewer"],
 			"platform": "linux",
-			"registry": "wmucdev.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/teamviewer/dev/1.0/docker-compose.yml"
@@ -148,8 +144,8 @@
 			"type": 1,
 			"title": "TeamViewer IoT Agent",
 			"description": "Deploys the TeamViewer IoT Agent standalone, e.g. on IOT-GW30",
-			"note": "Deploys the TeamViewer IoT Agent standalone. Multiple Sensors or Connectors might connect to this agent. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
-			"categories": ["IoT"],
+			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:100%;\">You are on the development container registry! Images from this registry are not for production use!</span><br>Deploys the TeamViewer IoT Agent standalone. Multiple Sensors or Connectors might connect to this agent. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
+			"categories": ["UC20-WL2000", "IOT-GW30", "TeamViewer"],
 			"restart_policy": "unless-stopped",
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",

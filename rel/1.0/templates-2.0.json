@@ -5,10 +5,9 @@
 			"title": "Azure IoT Edge",
 			"description": "Azure IoT Edge Runtime",
 			"note": "Deploys the Runtime for Azure IoT Edge 1.1 on Debian Buster",
-			"categories": ["Weidmueller", "IoT", "Azure"],
+			"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
-			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/azure-iot-edge/rel/1.0/docker-compose.yml"
@@ -24,10 +23,9 @@
 			"title": "Node-RED for u-create web",
 			"description": "Flow-based programming tool",
 			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.",
-			"categories": ["Weidmueller"],
+			"categories": ["UC20-WL2000", "IOT-GW30"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
-			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/wm-node-red/rel/1.0/docker-compose.yml"
@@ -45,9 +43,8 @@
 			"description": "Publish u-control global variables to the TeamViewer IoT Service",
 			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
-			"categories": ["Weidmueller", "TeamViewer", "IoT"],
+			"categories": ["UC20-WL2000", "TeamViewer"],
 			"platform": "linux",
-			"registry": "wmucrel.azurecr.io",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/teamviewer/rel/1.0/docker-compose.yml"

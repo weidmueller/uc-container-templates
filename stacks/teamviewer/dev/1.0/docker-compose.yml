@@ -24,7 +24,7 @@ services:
 
 
     node-red:
-      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.0-alpha.1
+      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.0-1.0-alpha.1
       container_name: uc-tviot-connector 
       cpu_quota: 25000
       restart: unless-stopped

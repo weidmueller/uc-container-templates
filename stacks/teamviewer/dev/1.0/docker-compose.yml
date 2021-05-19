@@ -6,6 +6,11 @@ services:
       container_name: teamviewer-agent
       cpu_quota: 80000
       restart: unless-stopped
+      logging:
+        driver: ${LOGGING_DRIVER},
+        options:
+          max-size: "10m",
+          max-file: "1"
       environment:
         ACCEPT_EULA: ${ACCEPT_EULA}
         SERIAL_NUMBER_DOCKER_CONTAINER: ${HOSTNAME}     # Please fill in a serial number with at least 8 ASCII characters  
@@ -24,10 +29,15 @@ services:
 
 
     node-red:
-      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.0-1.0-alpha.1
+      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.2-1.0-alpha.1
       container_name: uc-tviot-connector 
       cpu_quota: 25000
       restart: unless-stopped
+      logging:
+        driver: ${LOGGING_DRIVER},
+        options:
+          max-size: "10m",
+          max-file: "1"
       environment:
         SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in TeamViewer IoT portal        
         UPDATE_INTERVAL: ${UPDATE_INTERVAL}             # Interval at which metric values are updated in milli-seconds, must be 50ms or larger. 

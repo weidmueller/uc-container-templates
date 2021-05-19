@@ -9,20 +9,50 @@
 			"platform": "linux",
 			"image": "hello-world",
 			"registry": "wmucdev.azurecr.io",
-			"name": "hello-world"
+			"name": "hello-world",
+			"env": [{
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "enabled",
+						"value": "local"
+					},
+					{
+						"text": "disabled",
+						"value": "none",
+						"default": true
+					}
+				]
+			}]
 		},
 		{
 			"type": 3,
 			"title": "Hello-World Stack",
 			"description": "Hello-World, Template Type 3 (Compose)",
 			"note": "<span class=\"label label-warning image-tag ng-scope\" style=\"font-size:120%;\">You are on the development container registry! Images from this registry are not for production use!</span><hr>Small Hello-World Image, useful for Testing Portainer. Deploys a Stack from a compose file.",
-			"categories": ["UC20-WL2000", "IOT-GW30","Debug"],
+			"categories": ["UC20-WL2000", "IOT-GW30", "Debug"],
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
-			}
-		}, 
+			},
+			"env": [{
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "enabled",
+						"value": "local"
+					},
+					{
+						"text": "disabled",
+						"value": "none",
+						"default": true
+					}
+				]
+			}]
+		},
 		{
 			"type": 3,
 			"title": "Azure IoT Edge",
@@ -39,6 +69,20 @@
 				"name": "DEVICE_CONNECTION_STR",
 				"label": "Device Connection String",
 				"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
+			}, {
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "enabled",
+						"value": "local"
+					},
+					{
+						"text": "disabled",
+						"value": "none",
+						"default": true
+					}
+				]
 			}]
 		},
 		{
@@ -58,6 +102,20 @@
 				"label": "Web Server Port",
 				"description": "The TCP port that the Node-RED web server is listening on.",
 				"default": "1881"
+			}, {
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "enabled",
+						"value": "local"
+					},
+					{
+						"text": "disabled",
+						"value": "none",
+						"default": true
+					}
+				]
 			}]
 		},
 		{
@@ -138,6 +196,20 @@
 					"name": "VAR_PREFIX",
 					"label": "Filter Global Variables by Prefix",
 					"description": "Only global variables starting with this prefix are published as metrics. Leave empty to publish all global variables."
+				}, {
+					"name": "LOGGING_DRIVER",
+					"label": "Logging",
+					"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+					"select": [{
+							"text": "enabled",
+							"value": "local"
+						},
+						{
+							"text": "disabled",
+							"value": "none",
+							"default": true
+						}
+					]
 				}
 			]
 		}, {
@@ -213,6 +285,20 @@
 					"name": "APP_CONNECTED_ALLOWED_PORTS",
 					"default": 443,
 					"preset": true
+				}, {
+					"name": "LOGGING_DRIVER",
+					"label": "Logging",
+					"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+					"select": [{
+							"text": "enabled",
+							"value": "local"
+						},
+						{
+							"text": "disabled",
+							"value": "none",
+							"default": true
+						}
+					]
 				}
 			],
 			"network": "host",

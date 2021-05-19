@@ -1,13 +1,20 @@
 version: '2'
 services:
-    azure-iotedged:
-            image: wmucdev.azurecr.io/azure-iot-edge:1.1.1-1.0-alpha.1
-            volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            networks:
-            - hub 
-            environment: 
-                - DEVICE_CONNECTION_STR=${DEVICE_CONNECTION_STR}
+    azure-iotedge:
+        image: wmucdev.azurecr.io/azure-iot-edge:1.1.1-1.0-alpha.1
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+          - hub 
+        environment: 
+          DEVICE_CONNECTION_STR: ${DEVICE_CONNECTION_STR}
+        restart: unless-stopped
+        logging:
+          driver: ${LOGGING_DRIVER},
+          options:
+            max-size: "10m",
+            max-file: "1"
+
 networks:
-       hub:
-           driver: bridge
+    hub:
+        driver: bridge

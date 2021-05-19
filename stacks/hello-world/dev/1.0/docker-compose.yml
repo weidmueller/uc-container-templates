@@ -1,6 +1,12 @@
 version: "2"
 
 services:
-  wm-node-red:
+  hello-world:
     image: wmucdev.azurecr.io/hello-world 
-    container_name: hello-world-stack 
+    container_name: hello-world-stack
+    logging:
+      driver: ${LOGGING_DRIVER},
+      options:
+        max-size: "10m",
+        max-file: "1"
+    

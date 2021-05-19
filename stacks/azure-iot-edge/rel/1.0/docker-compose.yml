@@ -1,13 +1,14 @@
 version: '2'
 services:
-    azure-iotedged:
-            image: wmucrel.azurecr.io/azure-iot-edge:1.1.1-1.0
-            volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            networks:
-            - hub 
-            environment: 
-                - DEVICE_CONNECTION_STR=${DEVICE_CONNECTION_STR}
+    azure-iotedge:
+        image: wmucrel.azurecr.io/azure-iot-edge:1.1.1-1.0
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+          - hub 
+        environment: 
+          DEVICE_CONNECTION_STR: ${DEVICE_CONNECTION_STR}
+        restart: unless-stopped
 networks:
-       hub:
-           driver: bridge
+    hub:
+        driver: bridge

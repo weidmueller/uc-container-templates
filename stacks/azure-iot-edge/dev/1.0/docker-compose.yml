@@ -10,9 +10,9 @@ services:
           DEVICE_CONNECTION_STR: ${DEVICE_CONNECTION_STR}
         restart: unless-stopped
         logging:
-          driver: ${LOGGING_DRIVER},
+          driver: ${LOGGING_DRIVER}
           options:
-            max-size: "10m",
+            max-size: "10m"
             max-file: "1"
 
 networks:

@@ -7,9 +7,9 @@ services:
       cpu_quota: 80000
       restart: unless-stopped
       logging:
-        driver: ${LOGGING_DRIVER},
+        driver: ${LOGGING_DRIVER}
         options:
-          max-size: "10m",
+          max-size: "10m"
           max-file: "1"
       environment:
         ACCEPT_EULA: ${ACCEPT_EULA}
@@ -34,9 +34,9 @@ services:
       cpu_quota: 25000
       restart: unless-stopped
       logging:
-        driver: ${LOGGING_DRIVER},
+        driver: ${LOGGING_DRIVER}
         options:
-          max-size: "10m",
+          max-size: "10m"
           max-file: "1"
       environment:
         SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in TeamViewer IoT portal        

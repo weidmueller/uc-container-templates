@@ -29,7 +29,7 @@ services:
 
 
     node-red:
-      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.2-1.0-alpha.1
+      image: wmucdev.azurecr.io/uc-tviot-connector:1.0.0-1.0-alpha.1
       container_name: uc-tviot-connector 
       cpu_quota: 25000
       restart: unless-stopped
@@ -44,6 +44,7 @@ services:
         VAR_PREFIX: ${VAR_PREFIX}                       # Optional prefix which can be used to publish only a subset of variables. If set, only variables starting with VAR_PREFIX are published.
       network_mode: "host"
       depends_on: 
-        -  "agent"
+        - "agent"
       volumes:
-        -  tviot-persistent:/tviot      
+        - tviot-persistent:/tviot
+        - connector-persistent:/data

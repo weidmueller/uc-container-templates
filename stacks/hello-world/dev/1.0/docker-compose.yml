@@ -8,5 +8,6 @@ services:
       driver: ${LOGGING_DRIVER}
       options:
         max-size: "10m"
-        max-file: "1"
+        max-file: "1"        
+        compress: "false"
     

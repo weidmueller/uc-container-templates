@@ -13,15 +13,18 @@
 			"env": [{
 				"name": "LOGGING_DRIVER",
 				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
 				"select": [{
-						"text": "enabled",
+						"text": "persistent (local)",
 						"value": "local"
+					}, {
+						"text": "RAM only (journald)",
+						"value": "journald",
+						"default": true
 					},
 					{
 						"text": "disabled",
-						"value": "none",
-						"default": true
+						"value": "none"
 					}
 				]
 			}]
@@ -40,15 +43,18 @@
 			"env": [{
 				"name": "LOGGING_DRIVER",
 				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
 				"select": [{
-						"text": "enabled",
+						"text": "persistent (local)",
 						"value": "local"
+					}, {
+						"text": "RAM only (journald)",
+						"value": "journald",
+						"default": true
 					},
 					{
 						"text": "disabled",
-						"value": "none",
-						"default": true
+						"value": "none"
 					}
 				]
 			}]
@@ -72,15 +78,18 @@
 			}, {
 				"name": "LOGGING_DRIVER",
 				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
 				"select": [{
-						"text": "enabled",
+						"text": "persistent (local)",
 						"value": "local"
+					}, {
+						"text": "RAM only (journald)",
+						"value": "journald",
+						"default": true
 					},
 					{
 						"text": "disabled",
-						"value": "none",
-						"default": true
+						"value": "none"
 					}
 				]
 			}]
@@ -107,15 +116,23 @@
 				"label": "Logging",
 				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
 				"select": [{
-						"text": "enabled",
-						"value": "local"
-					},
-					{
-						"text": "disabled",
-						"value": "none",
-						"default": true
-					}
-				]
+					"name": "LOGGING_DRIVER",
+					"label": "Logging",
+					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
+					"select": [{
+							"text": "persistent (local)",
+							"value": "local"
+						}, {
+							"text": "RAM only (journald)",
+							"value": "journald",
+							"default": true
+						},
+						{
+							"text": "disabled",
+							"value": "none"
+						}
+					]
+				}]
 			}]
 		},
 		{
@@ -199,20 +216,24 @@
 				}, {
 					"name": "LOGGING_DRIVER",
 					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
 					"select": [{
-							"text": "enabled",
+							"text": "persistent (local)",
 							"value": "local"
+						}, {
+							"text": "RAM only (journald)",
+							"value": "journald",
+							"default": true
 						},
 						{
 							"text": "disabled",
-							"value": "none",
-							"default": true
+							"value": "none"
 						}
 					]
 				}
 			]
-		}, {
+		},
+		{
 			"type": 1,
 			"title": "TeamViewer IoT Agent",
 			"description": "Deploys the TeamViewer IoT Agent standalone, e.g. on IOT-GW30",
@@ -288,15 +309,18 @@
 				}, {
 					"name": "LOGGING_DRIVER",
 					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
 					"select": [{
-							"text": "enabled",
+							"text": "persistent (local)",
 							"value": "local"
+						}, {
+							"text": "RAM only (journald)",
+							"value": "journald",
+							"default": true
 						},
 						{
 							"text": "disabled",
-							"value": "none",
-							"default": true
+							"value": "none"
 						}
 					]
 				}

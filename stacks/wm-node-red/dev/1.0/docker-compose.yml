@@ -7,10 +7,6 @@ services:
     network_mode: "host"
     logging:
       driver: ${LOGGING_DRIVER}
-      options:
-        max-size: "10m"
-        max-file: "1"        
-        compress: "false"
     volumes:
       - wm-node-red:/data
     environment: 

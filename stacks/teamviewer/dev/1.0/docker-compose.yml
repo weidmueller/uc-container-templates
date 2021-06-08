@@ -8,10 +8,6 @@ services:
       restart: unless-stopped
       logging:
         driver: ${LOGGING_DRIVER}
-        options:
-          max-size: "10m"
-          max-file: "1"          
-          compress: "false"
       environment:
         ACCEPT_EULA: ${ACCEPT_EULA}
         SERIAL_NUMBER_DOCKER_CONTAINER: ${HOSTNAME}     # Please fill in a serial number with at least 8 ASCII characters  
@@ -36,10 +32,6 @@ services:
       restart: unless-stopped
       logging:
         driver: ${LOGGING_DRIVER}
-        options:
-          max-size: "10m"
-          max-file: "1"          
-          compress: "false"
       environment:
         SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in TeamViewer IoT portal        
         UPDATE_INTERVAL: ${UPDATE_INTERVAL}             # Interval at which metric values are updated in milli-seconds, must be 50ms or larger. 

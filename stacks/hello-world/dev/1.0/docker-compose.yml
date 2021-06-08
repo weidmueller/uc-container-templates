@@ -6,8 +6,3 @@ services:
     container_name: hello-world-stack
     logging:
       driver: ${LOGGING_DRIVER}
-      options:
-        max-size: "10m"
-        max-file: "1"        
-        compress: "false"
-    

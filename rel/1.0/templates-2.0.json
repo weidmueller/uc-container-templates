@@ -1,122 +1,21 @@
 {
 	"version": "2",
 	"templates": [{
-			"type": 3,
-			"title": "Azure IoT Edge",
-			"description": "Azure IoT Edge Runtime",
-			"note": "Deploys the Runtime for Azure IoT Edge 1.1 on Debian Buster",
-			"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
-			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge.svg",
-			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/azure-iot-edge/rel/1.0/docker-compose.yml"
-			},
-			"env": [{
-				"name": "DEVICE_CONNECTION_STR",
-				"label": "Device Connection String",
-				"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
-			}]
+		"type": 3,
+		"title": "Azure IoT Edge",
+		"description": "Azure IoT Edge Runtime",
+		"note": "Deploys the runtime for Azure IoT Edge 1.1 on Debian Buster.<br><br><b>Please note:</b> This feature is currently a <span class = \"label label-warning\" style = \"font-size: larger;\">BETA</span> version.",
+		"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
+		"platform": "linux",
+		"logo": "http://172.17.11.42:8080/logos/azure-iot-edge-beta.svg",
+		"repository": {
+			"url": "https://github.com/weidmueller/uc-container-templates",
+			"stackfile": "stacks/azure-iot-edge/rel/1.0/docker-compose.yml"
 		},
-		{
-			"type": 3,
-			"title": "Node-RED for u-create web",
-			"description": "Flow-based programming tool",
-			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.",
-			"categories": ["UC20-WL2000", "IOT-GW30"],
-			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red.svg",
-			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/wm-node-red/rel/1.0/docker-compose.yml"
-			},
-			"env": [{
-				"name": "PORT",
-				"label": "Web Server Port",
-				"description": "The TCP port that the Node-RED web server is listening on.",
-				"default": "1881"
-			}]
-		},
-		{
-			"type": 3,
-			"title": "TeamViewer IoT Agent & Connector for u-create web",
-			"description": "Publish u-control global variables to the TeamViewer IoT Service",
-			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot.svg",
-			"categories": ["UC20-WL2000", "TeamViewer"],
-			"platform": "linux",
-			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/teamviewer/rel/1.0/docker-compose.yml"
-			},
-			"env": [{
-					"name": "ACCEPT_EULA",
-					"label": "Accept TeamViewer EULA",
-					"description": "Please accept the TeamViewer EULA to use the Teamviewer IoT Agent.",
-					"select": [{
-							"text": "Yes, I've read and accept the TeamViewer EULA",
-							"value": "YES"
-						},
-						{
-							"text": "No, I do not accept the TeamViewer EULA",
-							"value": "NO",
-							"default": true
-						}
-					]
-				}, {
-					"name": "ASSIGNMENT_API_TOKEN",
-					"label": "TeamViewer IoT Assignment Token",
-					"description": "The assignment token must be obtained from the TeamViewer IoT Management Console."
-				},
-				{
-					"name": "ASSIGNMENT_GROUP_NAME",
-					"label": "TeamViewer IoT Assignment Group Name",
-					"description": "The device will be assigned to this group in the TeamViewer IoT Device Inventory."
-				},
-				{
-					"name": "HOSTNAME",
-					"label": "Device Name",
-					"description": "The device will be registered in the TeamViewer IoT Device Inventory under this name.",
-					"default": "Weidmüller IoT Device"
-				},
-				{
-					"name": "SENSOR_NAME",
-					"label": "TeamViewer Sensor Name",
-					"description": "Name of the sensor under which the metrics of this device are published. If left empty, a default name is generated."
-				},
-				{
-					"name": "UPDATE_INTERVAL",
-					"label": "Update Interval",
-					"description": "Metrics are published periodically at this interval.",
-					"select": [{
-							"text": "1s",
-							"value": "1000"
-						},
-						{
-							"text": "2s",
-							"value": "2000"
-						}, {
-							"text": "5s",
-							"value": "5000",
-							"default": true
-						}, {
-							"text": "10s",
-							"value": "10000"
-						}, {
-							"text": "1m",
-							"value": "60000"
-						}, {
-							"text": "10m",
-							"value": "600000"
-						}
-					]
-				},
-				{
-					"name": "VAR_PREFIX",
-					"label": "Filter Global Variables by Prefix",
-					"description": "Only global variables starting with this prefix are published as metrics. Leave empty to publish all global variables."
-				}
-			]
-		}
-	]
+		"env": [{
+			"name": "DEVICE_CONNECTION_STR",
+			"label": "Device Connection String",
+			"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
+		}]
+	}]
 }

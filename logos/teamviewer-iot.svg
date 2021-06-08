@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 102.39026 102.3902"
+   viewBox="-3.5 -2.5 109 107"
    version="1.1"
    id="svg136"
-   sodipodi:docname="TV_IoT_square_red_RGB.svg"
+   sodipodi:docname="teamviewer-iot.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   width="102.39026"
-   height="102.3902">
+   width="256"
+   height="256">
   <metadata
      id="metadata140">
     <rdf:RDF>
@@ -41,11 +41,18 @@
      showgrid="false"
      inkscape:zoom="3.1949609"
      inkscape:cx="200.11352"
-     inkscape:cy="21.24613"
+     inkscape:cy="96.36442"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="open_subline" />
+     inkscape:current-layer="open_subline"
+     inkscape:document-rotation="0"
+     lock-margins="true"
+     scale-x="0.4"
+     viewbox-width="109"
+     viewbox-x="-3.5"
+     viewbox-y="-2.5"
+     viewbox-height="107" />
   <defs
      id="defs78">
     <style
@@ -59,7 +66,7 @@
        data-name="open subline">
       <polygon
          class="cls-1"
-         points="65.195,46.049 61.403,36.84 89.735,51.195 61.403,65.551 65.195,56.341 37.3,56.341 41.062,65.551 12.655,51.195 41.092,36.84 37.3,46.049 "
+         points="41.062,65.551 12.655,51.195 41.092,36.84 37.3,46.049 65.195,46.049 61.403,36.84 89.735,51.195 61.403,65.551 65.195,56.341 37.3,56.341 "
          id="polygon86"
          style="fill:#ad003a;fill-opacity:0.968627" />
       <path

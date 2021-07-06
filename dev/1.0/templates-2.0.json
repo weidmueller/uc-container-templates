@@ -9,25 +9,7 @@
 			"platform": "linux",
 			"image": "hello-world",
 			"registry": "wmucdev.azurecr.io",
-			"name": "hello-world",
-			"env": [{
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-				"select": [{
-						"text": "persistent (local)",
-						"value": "local"
-					}, {
-						"text": "RAM only (journald)",
-						"value": "journald",
-						"default": true
-					},
-					{
-						"text": "disabled",
-						"value": "none"
-					}
-				]
-			}]
+			"name": "hello-world"
 		},
 		{
 			"type": 3,
@@ -39,25 +21,7 @@
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
-			},
-			"env": [{
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-				"select": [{
-						"text": "persistent (local)",
-						"value": "local"
-					}, {
-						"text": "RAM only (journald)",
-						"value": "journald",
-						"default": true
-					},
-					{
-						"text": "disabled",
-						"value": "none"
-					}
-				]
-			}]
+			}
 		},
 		{
 			"type": 3,
@@ -116,10 +80,6 @@
 				"label": "Logging",
 				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
 				"select": [{
-					"name": "LOGGING_DRIVER",
-					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-					"select": [{
 							"text": "persistent (local)",
 							"value": "local"
 						}, {
@@ -132,7 +92,6 @@
 							"value": "none"
 						}
 					]
-				}]
 			}]
 		},
 		{
@@ -328,6 +287,71 @@
 			"network": "host",
 			"volumes": [{
 				"tviot-persistent": "/tviot"
+			}]
+		}, {
+			"type": 3,
+			"title": "Eclipse Mosquitto",
+			"description": "Open-source MQTT Broker",
+			"note": "Deploys the open-source MQTT Broker Eclipse Mosquitto from Docker Hub.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000", "IOT-GW30"],
+			"platform": "linux",
+			"logo": "https://d1q6f0aelx0por.cloudfront.net/product-logos/library-eclipse-mosquitto-logo.png",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/eclipse-mosquitto/dev/1.0/docker-compose.yml"
+			},
+			"env": [{
+				"name": "PORT",
+				"label": "MQTT Port",
+				"description": "The TCP port that the MQTT server is listening on. You can specify multiple ports like '1883 9001'.",
+				"default": "1883"
+			}, {
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "persistent (local)",
+						"value": "local"
+					}, {
+						"text": "RAM only (journald)",
+						"value": "journald",
+						"default": true
+					},
+					{
+						"text": "disabled",
+						"value": "none"
+					}
+				]
+			}]
+		}, {
+			"type": 3,
+			"title": "PROCON-WEB ES (Embedded Systems)",
+			"description": "Deploys the C++ based Runtime for PROCON-WEB",
+			"note": "Deploys the C++ based Runtime for PROCON-WEB.<h4><span class=\"label label-warning image-tag ng-scope\">This is a development preview from a private Weidmüller GTI container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000", "IOT-GW30"],
+			"platform": "linux",
+			"logo": "https://www.gti.de/wp-content/uploads/2013/08/Procon-Web1-300x207.png",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/procon-web-es/dev/1.0/docker-compose.yml"
+			},
+			"env": [{
+				"name": "LOGGING_DRIVER",
+				"label": "Logging",
+				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
+				"select": [{
+						"text": "persistent (local)",
+						"value": "local"
+					}, {
+						"text": "RAM only (journald)",
+						"value": "journald",
+						"default": true
+					},
+					{
+						"text": "disabled",
+						"value": "none"
+					}
+				]
 			}]
 		}
 	]

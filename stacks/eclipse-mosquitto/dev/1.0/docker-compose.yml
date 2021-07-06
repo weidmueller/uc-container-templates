@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  eclipse-mosquitto:
+    image: eclipse-mosquitto
+    container_name: eclipse-mosquitto
+    logging:
+      driver: ${LOGGING_DRIVER}
+    volumes:
+      - mosquitto-conf:/mosquitto/config
+    environment: 
+      PORT: ${PORT}

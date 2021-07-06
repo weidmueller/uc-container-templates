@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  procon-web:
+    image: proconweb.azurecr.io/procon-web-es
+    container_name: procon-web
+    logging:
+      driver: ${LOGGING_DRIVER}
+    volumes:
+      - procon-web-projects:/root

@@ -8,3 +8,7 @@ services:
       driver: ${LOGGING_DRIVER}
     volumes:
       - procon-web-projects:/root
+
+
+volumes:
+  procon-web-projects:

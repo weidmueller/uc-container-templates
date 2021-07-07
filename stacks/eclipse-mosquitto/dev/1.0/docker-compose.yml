@@ -10,3 +10,7 @@ services:
       - mosquitto-conf:/mosquitto/config
     environment: 
       PORT: ${PORT}
+
+
+volumes:
+  mosquitto-conf:

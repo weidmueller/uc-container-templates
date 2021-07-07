@@ -11,3 +11,6 @@ services:
       - wm-node-red:/data
     environment: 
       PORT: ${PORT}
+
+volumes:
+  wm-node-red:

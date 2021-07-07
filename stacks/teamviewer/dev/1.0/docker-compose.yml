@@ -42,3 +42,7 @@ services:
       volumes:
         - tviot-persistent:/tviot
         - connector-persistent:/data
+
+volumes:
+  tviot-persistent:
+  connector-persistent:

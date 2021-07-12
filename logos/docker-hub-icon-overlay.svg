@@ -628,17 +628,23 @@
                style="fill:#2496ed;fill-opacity:1"
                id="path232" />
           </g>
-          <text
-             xml:space="preserve"
-             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;line-height:1.25;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.8;"
-             x="472.14529"
-             y="903.63361"
-             id="text951"><tspan
-               sodipodi:role="line"
-               id="tspan949"
-               x="472.14529"
-               y="903.63361"
-               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:3.8;fill:#ffffff;fill-opacity:1;">HUB</tspan></text>
+          <g
+             aria-label="HUB"
+             id="text951"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;line-height:1.25;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.8">
+            <path
+               d="m 574.47154,903.63361 v -68.8863 h -54.84152 v 68.8863 H 490.20287 V 749.5869 h 29.42715 v 61.75244 h 54.84152 V 749.5869 h 29.65009 v 154.04671 z"
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:3.8"
+               id="path1672" />
+            <path
+               d="m 752.37184,853.25075 q 0,15.60531 -6.68799,27.86662 -6.46505,12.03839 -19.6181,18.94931 -12.93011,6.91092 -31.21062,6.91092 -27.64369,0 -42.35727,-14.49064 -14.71358,-14.71358 -14.71358,-39.23621 V 749.5869 h 29.42716 v 102.10332 q 0,16.27411 6.68799,24.29969 6.91092,8.02559 20.9557,8.02559 14.26771,0 20.9557,-8.02559 6.91092,-8.02558 6.91092,-24.29969 V 749.5869 h 29.65009 z"
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:3.8"
+               id="path1674" />
+            <path
+               d="m 861.83154,822.04013 q 15.82824,2.89813 25.41436,11.36958 9.80905,8.47146 9.80905,25.86023 0,24.07676 -16.94291,34.33168 -16.94291,10.03199 -47.48473,10.03199 H 786.25725 V 749.5869 h 40.35087 q 63.75884,0 63.75884,39.23621 0,13.59891 -8.24852,22.2933 -8.24852,8.47146 -20.2869,10.92372 z M 815.68441,771.2114 v 41.68848 h 18.05757 q 12.26131,0 19.39517,-5.3504 7.13385,-5.57332 7.13385,-16.27411 0,-11.14665 -7.57972,-15.60531 -7.35679,-4.45866 -23.18503,-4.45866 z m 17.16584,110.35184 q 16.27411,0 24.74556,-4.90453 8.69439,-4.90452 8.69439,-18.50344 0,-13.15304 -8.24853,-18.9493 -8.02558,-5.79626 -22.07036,-5.79626 h -20.2869 v 48.15353 z"
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:222.933px;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:3.8"
+               id="path1676" />
+          </g>
           <g
              id="g923"
              style="fill:#ffffff"

@@ -292,12 +292,12 @@
 			"type": 3,
 			"title": "Eclipse Mosquitto",
 			"description": "Open-source MQTT Broker",
-			"note": "Deploys the open-source MQTT Broker Eclipse Mosquitto from Docker Hub.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"note": "Deploys the open-source MQTT Broker Eclipse Mosquitto from <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://hub.docker.com/_/eclipse-mosquitto\">Docker Hub</a>.<h4><span class=\"label label-info image-tag ng-scope\">This container image is maintained by a 3rd party and provided through Docker Hub.</span></h4>",
 			"categories": ["UC20-WL2000", "IOT-GW30"],
 			"platform": "linux",
-			"logo": "https://d1q6f0aelx0por.cloudfront.net/product-logos/library-eclipse-mosquitto-logo.png",
+			"logo": "https://raw.githubusercontent.com/psten/uc-container-templates/master/logos/eclipse-mosquitto-hub.svg",
 			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates",
+				"url": "https://github.com/psten/uc-container-templates",
 				"stackfile": "stacks/eclipse-mosquitto/dev/1.0/docker-compose.yml"
 			},
 			"env": [{

@@ -22,7 +22,7 @@ services:
         ASSIGNMENT_GROUP_NAME: ${ASSIGNMENT_GROUP_NAME} # TeamViewer Computer and Contact group, where the agent should be part of it. Please put the name betweeen '<GROUP NAME>'
       network_mode: "host"
       volumes:
-        - tviot-persistent:/tmp/teamviewer-iot-agent
+        - tviot-persistent:/var/persistent/teamviewer
 
 
     node-red:

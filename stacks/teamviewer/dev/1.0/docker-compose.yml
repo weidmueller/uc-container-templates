@@ -1,7 +1,7 @@
 version: "2"
 services:
     agent:
-      image: wmucdev.azurecr.io/tviot-agent:2.14.13-1.0-alpha.1
+      image: wmucdev.azurecr.io/tviot-agent:2.17.3
       hostname: ${HOSTNAME}                             # Choose your own hostname
       container_name: teamviewer-agent
       cpu_quota: 80000

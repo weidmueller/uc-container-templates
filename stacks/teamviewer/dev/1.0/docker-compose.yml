@@ -9,7 +9,7 @@ services:
       logging:
         driver: ${LOGGING_DRIVER}
       environment:
-        ACCEPT_EULA: ${ACCEPT_EULA}
+        EULA_ACCEPTED: ${EULA_ACCEPTED}
         SERIAL_NUMBER_DOCKER_CONTAINER: ${HOSTNAME}     # Please fill in a serial number with at least 8 ASCII characters  
         ENABLE_APP_CONTROL: 1                           # Activate AppControl function on the agent
         APP_CONTROL_PORT: 80                            # Port for the web server to which the agent sholud connected

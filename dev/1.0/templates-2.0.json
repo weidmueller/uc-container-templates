@@ -148,16 +148,16 @@
 				"stackfile": "stacks/teamviewer/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
-					"name": "ACCEPT_EULA",
+					"name": "EULA_ACCEPTED",
 					"label": "Accept TeamViewer EULA",
 					"description": "Please accept the TeamViewer EULA to use the Teamviewer IoT Agent.",
 					"select": [{
 							"text": "Yes, I've read and accept the TeamViewer EULA",
-							"value": "YES"
+							"value": "Yes"
 						},
 						{
 							"text": "No, I do not accept the TeamViewer EULA",
-							"value": "NO",
+							"value": "No",
 							"default": true
 						}
 					]
@@ -242,20 +242,20 @@
 			"restart_policy": "unless-stopped",
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot-beta.svg",
-			"image": "tviot-agent:2.14.13-1.0-alpha.1",
+			"image": "tviot-agent:2.17.3",
 			"registry": "wmucdev.azurecr.io",
 			"name": "teamviewer-agent",
 			"env": [{
-					"name": "ACCEPT_EULA",
+					"name": "EULA_ACCEPTED",
 					"label": "Accept TeamViewer EULA",
 					"description": "Please accept the TeamViewer EULA to use the Teamviewer IoT Agent.",
 					"select": [{
 							"text": "Yes, I've read and accept the TeamViewer EULA",
-							"value": "YES"
+							"value": "Yes"
 						},
 						{
 							"text": "No, I do not accept the TeamViewer EULA",
-							"value": "NO",
+							"value": "No",
 							"default": true
 						}
 					]

@@ -9,25 +9,7 @@
 			"platform": "linux",
 			"image": "hello-world",
 			"registry": "wmucdev.azurecr.io",
-			"name": "hello-world",
-			"env": [{
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-				"select": [{
-						"text": "persistent (local)",
-						"value": "local"
-					}, {
-						"text": "RAM only (journald)",
-						"value": "journald",
-						"default": true
-					},
-					{
-						"text": "disabled",
-						"value": "none"
-					}
-				]
-			}]
+			"name": "hello-world"
 		},
 		{
 			"type": 3,
@@ -39,25 +21,7 @@
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
-			},
-			"env": [{
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-				"select": [{
-						"text": "persistent (local)",
-						"value": "local"
-					}, {
-						"text": "RAM only (journald)",
-						"value": "journald",
-						"default": true
-					},
-					{
-						"text": "disabled",
-						"value": "none"
-					}
-				]
-			}]
+			}
 		},
 		{
 			"type": 3,
@@ -75,23 +39,6 @@
 				"name": "DEVICE_CONNECTION_STR",
 				"label": "Device Connection String",
 				"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
-			}, {
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-				"select": [{
-						"text": "persistent (local)",
-						"value": "local"
-					}, {
-						"text": "RAM only (journald)",
-						"value": "journald",
-						"default": true
-					},
-					{
-						"text": "disabled",
-						"value": "none"
-					}
-				]
 			}]
 		},
 		{
@@ -111,29 +58,33 @@
 				"label": "Web Server Port",
 				"description": "The TCP port that the Node-RED web server is listening on.",
 				"default": "1881"
-			}, {
-				"name": "LOGGING_DRIVER",
-				"label": "Logging",
-				"description": "Enable logging for testing or debugging. Logs are written to flash and contribute to flash wear.",
-				"select": [{
-					"name": "LOGGING_DRIVER",
-					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-					"select": [{
-							"text": "persistent (local)",
-							"value": "local"
-						}, {
-							"text": "RAM only (journald)",
-							"value": "journald",
-							"default": true
-						},
-						{
-							"text": "disabled",
-							"value": "none"
-						}
-					]
-				}]
 			}]
+		},
+		{
+			"type": 3,
+			"title": "easyConnect IIoT & Telemetry",
+			"description": "Enable your device to send data to Weidmüller easyConnect",
+			"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><br>To provision the IIoT Connector, please navigate to http://ipOfThisDevice:59256.<br>To access the Tag Editor, please navigate to http://ipOfThisDevice:16702.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000"],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-easyconnect-iiot-telemetry-beta.png",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/uc-addon-easyconnect-iiot-telemetry/dev/1.0/docker-compose.yml"
+			}
+		},
+		{
+			"type": 3,
+			"title": "PROCON WEB Embedded System",
+			"description": "HMI runtime for intuitive and web-based machine operation",
+			"note": "HMI runtime for intuitive and web-based machine operation, version 6.4.5 <br><br>To access the HMI, please navigate to http://ipOfThisDevice:16700.<br>To access the PROCON WEB System Management, please navigate to http://ipOfThisDevice:16701.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000", "IOT-GW30"],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-procon-web-es.png",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/uc-addon-procon-web-es/dev/1.0/docker-compose.yml"
+			}
 		},
 		{
 			"type": 3,
@@ -213,23 +164,6 @@
 					"name": "VAR_PREFIX",
 					"label": "Filter Global Variables by Prefix",
 					"description": "Only global variables starting with this prefix are published as metrics. Leave empty to publish all global variables."
-				}, {
-					"name": "LOGGING_DRIVER",
-					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-					"select": [{
-							"text": "persistent (local)",
-							"value": "local"
-						}, {
-							"text": "RAM only (journald)",
-							"value": "journald",
-							"default": true
-						},
-						{
-							"text": "disabled",
-							"value": "none"
-						}
-					]
 				}
 			]
 		},
@@ -306,23 +240,6 @@
 					"name": "APP_CONNECTED_ALLOWED_PORTS",
 					"default": 443,
 					"preset": true
-				}, {
-					"name": "LOGGING_DRIVER",
-					"label": "Logging",
-					"description": "Enable logging for testing or debugging. Logs are written to RAM using journald as default, since writing persistent logs to flash contributes to flash wear.",
-					"select": [{
-							"text": "persistent (local)",
-							"value": "local"
-						}, {
-							"text": "RAM only (journald)",
-							"value": "journald",
-							"default": true
-						},
-						{
-							"text": "disabled",
-							"value": "none"
-						}
-					]
 				}
 			],
 			"network": "host",

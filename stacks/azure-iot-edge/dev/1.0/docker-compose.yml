@@ -9,8 +9,6 @@ services:
         environment: 
           DEVICE_CONNECTION_STR: ${DEVICE_CONNECTION_STR}
         restart: unless-stopped
-        logging:
-          driver: ${LOGGING_DRIVER}
 
 networks:
     hub:

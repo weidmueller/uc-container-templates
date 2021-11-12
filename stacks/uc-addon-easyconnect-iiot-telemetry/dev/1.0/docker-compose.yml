@@ -4,7 +4,7 @@ services:
   uc-addon-easyconnect-iiot:
     image: wmucdev.azurecr.io/cloud-connector:20211111.2 
     container_name: uc-addon-easyconnect-iiot 
-    restart: on-failure
+    restart: unless-stopped
     cpu_quota: 25000
     network_mode: "host"
     volumes:
@@ -13,7 +13,7 @@ services:
   uc-addon-telemetry:
     image: wmucdev.azurecr.io/telemetry-app:20211015.4 
     container_name: uc-addon-telemetry-app  
-    restart: on-failure
+    restart: unless-stopped
     cpu_quota: 25000
     network_mode: "host"
     volumes:

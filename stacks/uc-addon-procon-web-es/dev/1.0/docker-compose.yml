@@ -4,7 +4,7 @@ services:
   uc-addon-procon-web-es:
     image: wmucdev.azurecr.io/procon-web-es:6.4.5.0
     container_name: uc-addon-procon-web-es
-    restart: on-failure
+    restart: unless-stopped
     cpu_quota: 25000
     volumes:
       - procon-web-projects:/root

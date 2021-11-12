@@ -2,7 +2,7 @@ version: "2"
 
 services:
   uc-addon-easyconnect-iiot:
-    image: wmucdev.azurecr.io/cloud-connector:latest 
+    image: wmucdev.azurecr.io/cloud-connector:20211111.2 
     container_name: uc-addon-easyconnect-iiot 
     restart: on-failure
     cpu_quota: 25000
@@ -11,7 +11,7 @@ services:
       - "cloud-connector:/root/.local/share/wm-iiot-cloud-connector"
 
   uc-addon-telemetry:
-    image: wmucdev.azurecr.io/telemetry-app:HKO.0.1 
+    image: wmucdev.azurecr.io/telemetry-app:20211015.4 
     container_name: uc-addon-telemetry-app  
     restart: on-failure
     cpu_quota: 25000

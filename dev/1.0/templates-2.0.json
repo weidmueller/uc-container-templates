@@ -33,7 +33,7 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-azure-iot-edge-beta.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/azure-iot-edge/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-azure-iot-edge/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "DEVICE_CONNECTION_STR",

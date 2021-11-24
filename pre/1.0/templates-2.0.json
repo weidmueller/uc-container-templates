@@ -1,0 +1,35 @@
+{
+	"version": "2",
+	"templates": [{
+		"type": 3,
+		"title": "Azure IoT Edge",
+		"description": "Azure IoT Edge Runtime",
+		"note": "Deploys the runtime for Azure IoT Edge 1.1 on Debian Buster.<br><br><b>Please note:</b> This feature is currently a <span class = \"label label-warning\" style = \"font-size: larger;\">BETA</span> version.",
+		"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
+		"platform": "linux",
+		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-azure-iot-edge-beta.svg",
+		"repository": {
+			"url": "https://github.com/weidmueller/uc-container-templates",
+			"stackfile": "stacks/azure-iot-edge/rel/1.0/docker-compose.yml"
+		},
+		"env": [{
+			"name": "DEVICE_CONNECTION_STR",
+			"label": "Device Connection String",
+			"description": "Obtain an Azure IoT Hub device connection string by registering a new device in the Azure Device Explorer."
+		}]
+	},
+	{
+		"type": 3,
+		"title": "easyConnect IIoT & Telemetry",
+		"description": "Enable your device to send data to Weidmüller easyConnect",
+		"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-warning image-tag ng-scope \">Pre-Release</span>&ensp;<span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000-AC. Other Systems are currently not supported!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:59256.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:16702.<br>Make sure to use http://, not https://. These Interfaces are only available after Deployment of the stack.",
+		"categories": ["UC20-WL2000"],
+		"platform": "linux",
+		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-easyconnect-iiot-telemetry-beta.png",
+		"repository": {
+			"url": "https://github.com/weidmueller/uc-container-templates",
+			"stackfile": "stacks/uc-addon-easyconnect-iiot/pre/1.0/docker-compose.yml"
+		}
+	}
+	]
+}

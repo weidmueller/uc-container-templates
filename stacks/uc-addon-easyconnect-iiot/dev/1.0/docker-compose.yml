@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  uc-addon-easyconnect-iiot:
+    image: wmucdev.azurecr.io/uc-addon-easyconnect-iiot:dev 
+    container_name: uc_addon_easyconnect_iiot 
+    restart: unless-stopped
+    cpu_quota: 25000
+    network_mode: "host"
+    volumes:
+      - "uc_addon_easyconnect_iiot:/root/.local/share/wm-iiot-cloud-connector"
+
+  uc-addon-telemetry:
+    image: wmucdev.azurecr.io/uc-addon-telemetry:dev
+    container_name: uc_addon_telemetry  
+    restart: unless-stopped
+    cpu_quota: 25000
+    network_mode: "host"
+    volumes:
+      - "uc_addon_telemetry:/root/.local/wm-iot"

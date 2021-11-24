@@ -1,7 +1,8 @@
 version: '2'
 services:
-    azure-iotedge:
+    uc-addon-easyconnect-azure-iot-edge:
         image: wmucdev.azurecr.io/azure-iot-edge:1.1.1-1.0-alpha.1
+        container-name: uc_addon_easyconnect_azure_iot_edge
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         networks:

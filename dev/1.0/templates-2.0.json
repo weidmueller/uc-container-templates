@@ -30,7 +30,7 @@
 			"note": "Deploys the runtime for Azure IoT Edge 1.1 on Debian Buster. <h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
 			"categories": ["UC20-WL2000", "IOT-GW30", "Azure"],
 			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/azure-iot-edge-beta.svg",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-azure-iot-edge-beta.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
 				"stackfile": "stacks/azure-iot-edge/dev/1.0/docker-compose.yml"
@@ -48,10 +48,10 @@
 			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
 			"categories": ["UC20-WL2000", "IOT-GW30"],
 			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/node-red-beta.svg",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-node-red-beta.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/wm-node-red/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-node-red/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "PORT",
@@ -64,21 +64,21 @@
 			"type": 3,
 			"title": "easyConnect IIoT & Telemetry",
 			"description": "Enable your device to send data to Weidmüller easyConnect",
-			"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><br>To provision the IIoT Connector, please navigate to http://ipOfThisDevice:59256.<br>To access the Tag Editor, please navigate to http://ipOfThisDevice:16702.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000. Other Systems are currently not supported and might crash!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:59256.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:16702.<br>Make sure to use http://, not https://.<br><h4><span class=\"label label-warning image-tag ng-scope \">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
 			"categories": ["UC20-WL2000"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-easyconnect-iiot-telemetry-beta.png",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-easyconnect-iiot-telemetry/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-easyconnect-iiot/dev/1.0/docker-compose.yml"
 			}
 		},
 		{
 			"type": 3,
 			"title": "PROCON WEB Embedded System",
 			"description": "HMI runtime for intuitive and web-based machine operation",
-			"note": "HMI runtime for intuitive and web-based machine operation, version 6.4.5 <br><br>To access the HMI, please navigate to http://ipOfThisDevice:16700.<br>To access the PROCON WEB System Management, please navigate to http://ipOfThisDevice:16701.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
-			"categories": ["UC20-WL2000", "IOT-GW30"],
+			"note": "HMI runtime for intuitive and web-based machine operation, version 6.4.5<br><h4><span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000. Other Systems are currently not supported and might crash!</span></h4><br>To access the HMI, please navigate to http://ipOfThisDevice:16700.<br>To access the PROCON WEB System Management, please navigate to http://[IP of this Device]:16701.<br>Make sure to use http://, not https://.<br><h4><span class=\"label label-warning image-tag ng-scope \">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-procon-web-es.png",
 			"repository": {
@@ -91,12 +91,12 @@
 			"title": "TeamViewer IoT Agent & Connector for u-create web",
 			"description": "Publish u-control global variables to the TeamViewer IoT Service",
 			"note": "Deploys a stack comprised of the TeamViewer IoT Agent and a Connector App to publish u-control global variables as TeamViewer metrics. <br>Please read and accept the <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.teamviewer.com/en/eula/\"><b>TeamViewer EULA</b></a>.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot-beta.svg",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-teamviewer-iot-beta.svg",
 			"categories": ["UC20-WL2000", "TeamViewer"],
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/teamviewer/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-teamviewer-iot/dev/1.0/docker-compose.yml"
 			},
 			"env": [{
 					"name": "EULA_ACCEPTED",
@@ -175,10 +175,10 @@
 			"categories": ["UC20-WL2000", "IOT-GW30", "TeamViewer"],
 			"restart_policy": "unless-stopped",
 			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/teamviewer-iot-beta.svg",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-teamviewer-iot-beta.svg",
 			"image": "tviot-agent:2.17.3",
 			"registry": "wmucdev.azurecr.io",
-			"name": "teamviewer-agent",
+			"name": "uc-addon-teamviewer-iot-agent",
 			"env": [{
 					"name": "EULA_ACCEPTED",
 					"label": "Accept TeamViewer EULA",
@@ -244,7 +244,7 @@
 			],
 			"network": "host",
 			"volumes": [{
-				"tviot-persistent": "/tviot"
+				"uc-addon-tviot-agent": "/tviot"
 			}]
 		}
 	]

@@ -3,7 +3,7 @@ services:
     agent:
       image: wmucdev.azurecr.io/tviot-agent:2.17.3
       hostname: ${HOSTNAME}                             # Choose your own hostname
-      container_name: teamviewer-agent
+      container_name: uc_addon_teamviewer_iot_agent
       cpu_quota: 80000
       restart: unless-stopped
       environment:
@@ -20,12 +20,12 @@ services:
         ASSIGNMENT_GROUP_NAME: ${ASSIGNMENT_GROUP_NAME} # TeamViewer Computer and Contact group, where the agent should be part of it. Please put the name betweeen '<GROUP NAME>'
       network_mode: "host"
       volumes:
-        - tviot-persistent:/var/persistent/teamviewer
+        - uc_addon_teamviewer_iot_agent:/var/persistent/teamviewer
 
 
     node-red:
       image: wmucdev.azurecr.io/uc-tviot-connector:1.0.3-1.0-alpha.1
-      container_name: uc-tviot-connector 
+      container_name: uc_addon_teamviewer_iot_connector 
       cpu_quota: 25000
       restart: unless-stopped
       environment:
@@ -36,5 +36,5 @@ services:
       depends_on: 
         - "agent"
       volumes:
-        - tviot-persistent:/tviot
-        - connector-persistent:/data
+        - uc_addon_teamviewer_iot_agent:/tviot
+        - uc_addon_teamviewer_iot_connector:/data

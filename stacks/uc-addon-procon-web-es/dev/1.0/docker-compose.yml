@@ -2,12 +2,12 @@ version: "2"
 
 services:
   uc-addon-procon-web-es:
-    image: wmucdev.azurecr.io/procon-web-es:6.4.5.0
-    container_name: uc-addon-procon-web-es
+    image: wmucdev.azurecr.io/procon-web-es:dev
+    container_name: uc_addon_procon_web_es
     restart: unless-stopped
     cpu_quota: 25000
     volumes:
-      - procon-web-projects:/root
+      - uc_addon_procon_web_es:/root
     network_mode: host
     logging:
       driver: json-file

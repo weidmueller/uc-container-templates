@@ -30,6 +30,19 @@
 			"url": "https://github.com/weidmueller/uc-container-templates",
 			"stackfile": "stacks/uc-addon-easyconnect-iiot/pre/1.0/docker-compose.yml"
 		}
+	}, 
+	{
+		"type": 3,
+		"title": "PROCON WEB Embedded System",
+		"description": "HMI runtime for intuitive and web-based machine operation",
+		"note": "HMI runtime for intuitive and web-based machine operation, version 6.4.5<br><h4><span class=\"label label-warning image-tag ng-scope \">Pre-Release</span>&ensp;<span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000-AC. Other Systems are currently not supported!</span></h4><br>To display the PROCON-WEB visualization, please navigate to http://[IP of this Device]:16700.<br>To access the PROCON-WEB System Management, please navigate to http://[IP of this Device]:16701.<br>Make sure to use http://, not https://. These Interfaces are only available after Deployment of the stack.",
+		"categories": ["UC20-WL2000"],
+		"platform": "linux",
+		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-procon-web-es.png",
+		"repository": {
+			"url": "https://github.com/weidmueller/uc-container-templates",
+			"stackfile": "stacks/uc-addon-procon-web-es/pre/1.0/docker-compose.yml"
+		}
 	}
 	]
 }

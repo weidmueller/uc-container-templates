@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  uc-addon-procon-web-es:
+    image: wmucrel.azurecr.io/uc-addon-procon-web-es:6.4.5-beta.1
+    container_name: uc_addon_procon_web_es
+    restart: unless-stopped
+    cpu_quota: 25000
+    volumes:
+      - uc_addon_procon_web_es:/root
+    network_mode: host
+    logging:
+      driver: json-file
+      options:
+        max-size: "2m"
+        max-file: "5"

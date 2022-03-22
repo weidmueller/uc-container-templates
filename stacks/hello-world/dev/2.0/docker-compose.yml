@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+  hello-world:
+    image: wmucdev.azurecr.io/hello-world 
+    container_name: hello_world_stack

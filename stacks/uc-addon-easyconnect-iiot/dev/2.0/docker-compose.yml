@@ -6,7 +6,9 @@ services:
     container_name: uc_addon_easyconnect_iiot 
     restart: unless-stopped
     cpu_quota: 25000
-    network_mode: "host"
+    network_mode: "internal-bridge"
+    ports:
+      - "18000:59256"
     volumes:
       - "uc_addon_easyconnect_iiot:/root/.local/share/wm-iiot-cloud-connector"
     environment:
@@ -20,9 +22,16 @@ services:
     container_name: uc_addon_telemetry  
     restart: unless-stopped
     cpu_quota: 25000
-    network_mode: "host"
+    network_mode: "internal-bridge"
+    ports:
+      - "18002:16702"
     volumes:
       - "uc_addon_telemetry:/root/.local/wm-iot"
     environment:
-      - driver_u_control_web_ipAddress=127.0.0.1
-      - grpc_connector_grpcEndpoint=127.0.0.1:7319
+      - driver_u_control_web_ipAddress=172.20.0.1
+      - grpc_connector_grpcEndpoint=uc-addon-easyconnect-iiot:7319
+
+
+volumes:
+  uc_addon_easyconnect_iiot:
+  uc_addon_telemetry:

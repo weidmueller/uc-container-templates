@@ -2,11 +2,14 @@ version: "2"
 
 services:
   uc-addon-easyconnect-iiot:
-    image: wmucdev.azurecr.io/uc-addon-easyconnect-iiot:0.9.0-rc.2 
+    image: wmucrel.azurecr.io/uc-addon-easyconnect-iiot:0.9.0-beta.2
     container_name: uc_addon_easyconnect_iiot 
     restart: unless-stopped
     cpu_quota: 25000
-    network_mode: "host"
+    network_mode: "internal-bridge"
+    ports:
+      - "18000:59256"
+      - "7319:7319"
     volumes:
       - "uc_addon_easyconnect_iiot:/root/.local/share/wm-iiot-cloud-connector"
     environment:
@@ -16,13 +19,20 @@ services:
       - serialNumber=${SERIALNUMBER}
 
   uc-addon-telemetry:
-    image: wmucdev.azurecr.io/uc-addon-telemetry:6.4.5-rc.2
+    image: wmucrel.azurecr.io/uc-addon-telemetry:6.4.5-beta.2
     container_name: uc_addon_telemetry  
     restart: unless-stopped
     cpu_quota: 25000
-    network_mode: "host"
+    network_mode: "internal-bridge"
+    ports:
+      - "18002:16702"
     volumes:
       - "uc_addon_telemetry:/root/.local/wm-iot"
     environment:
-      - driver_u_control_web_ipAddress=127.0.0.1
-      - grpc_connector_grpcEndpoint=127.0.0.1:7319
+      - driver_u_control_web_ipAddress=172.20.0.1
+      - grpc_connector_grpcEndpoint=uc-addon-easyconnect-iiot:7319
+
+
+volumes:
+  uc_addon_easyconnect_iiot:
+  uc_addon_telemetry:

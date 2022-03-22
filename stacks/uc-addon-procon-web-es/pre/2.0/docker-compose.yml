@@ -8,12 +8,22 @@ services:
     cpu_quota: 25000
     volumes:
       - uc_addon_procon_web_es:/root
-    network_mode: host
+    network_mode: "internal-bridge"
+    ports:
+      - "16700:16700"
+      - "16701:16701"
+      - "16702:16702"
+      - "16800:16800/udp"
+      - "16810:16810"
+      - "16620:16620"
     logging:
       driver: json-file
       options:
         max-size: "2m"
         max-file: "5"
     environment:
-      - driver_u_control_web_ipAddress=127.0.0.1
-      - grpc_connector_grpcEndpoint=127.0.0.1:7319
+      - driver_u_control_web_ipAddress=172.20.0.1
+      - grpc_connector_grpcEndpoint=uc-addon-easyconnect-iiot:7319
+
+volumes:
+  uc_addon_procon_web_es:

@@ -10,7 +10,7 @@
 		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-azure-iot-edge-beta.svg",
 		"repository": {
 			"url": "https://github.com/weidmueller/uc-container-templates",
-			"stackfile": "stacks/uc-addon-azure-iot-edge/rel/1.0/docker-compose.yml"
+			"stackfile": "stacks/uc-addon-azure-iot-edge/rel/2.0/docker-compose.yml"
 		},
 		"env": [{
 			"name": "DEVICE_CONNECTION_STR",
@@ -22,13 +22,13 @@
 		"type": 3,
 		"title": "easyConnect IIoT & Telemetry",
 		"description": "Enable your device to send data to Weidmüller easyConnect",
-		"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-warning image-tag ng-scope \">Pre-Release</span>&ensp;<span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000-AC. Other Systems are currently not supported!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:59256.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:16702.<br>Make sure to use http://, not https://. These Interfaces are only available after Deployment of the stack.",
+		"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-warning image-tag ng-scope \">Pre-Release</span>&ensp;<span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000-AC. Other Systems are currently not supported!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:18000.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:18002.<br>Make sure to use http://, not https://. These Interfaces are only available after Deployment of the stack.",
 		"categories": ["UC20-WL2000"],
 		"platform": "linux",
 		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-easyconnect-iiot-telemetry-beta.png",
 		"repository": {
 			"url": "https://github.com/weidmueller/uc-container-templates",
-			"stackfile": "stacks/uc-addon-easyconnect-iiot/pre/1.0/docker-compose.yml"
+			"stackfile": "stacks/uc-addon-easyconnect-iiot/pre/2.0/docker-compose.yml"
 		},
 		"env": [{
 			"name": "ARTICLE_NAME",
@@ -60,7 +60,7 @@
 		"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-procon-web-es.png",
 		"repository": {
 			"url": "https://github.com/weidmueller/uc-container-templates",
-			"stackfile": "stacks/uc-addon-procon-web-es/pre/1.0/docker-compose.yml"
+			"stackfile": "stacks/uc-addon-procon-web-es/pre/2.0/docker-compose.yml"
 		}
 	}
 	]

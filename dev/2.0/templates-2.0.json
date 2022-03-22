@@ -20,7 +20,7 @@
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/hello-world/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/hello-world/dev/2.0/docker-compose.yml"
 			}
 		},
 		{
@@ -33,7 +33,7 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-azure-iot-edge-beta.svg",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-azure-iot-edge/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-azure-iot-edge/dev/2.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "DEVICE_CONNECTION_STR",
@@ -45,13 +45,13 @@
 			"type": 3,
 			"title": "easyConnect IIoT & Telemetry",
 			"description": "Enable your device to send data to Weidmüller easyConnect",
-			"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000. Other Systems are currently not supported and might crash!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:59256.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:16702.<br>Make sure to use http://, not https://.<br><h4><span class=\"label label-warning image-tag ng-scope \">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"note": "Onboard your device and manage your connection to Weidmüller easyConnect. Collect data from different sources and publish it to easyConnect via the Tag Editor.<br><h4><span class=\"label label-danger image-tag ng-scope \">Only for use on UC20-WL2000. Other Systems are currently not supported and might crash!</span></h4><br>To provision the IIoT Connector, please navigate to http://[IP of this Device]:18000.<br>To access the Tag Editor, please navigate to http://[IP of this Device]:18002.<br>Make sure to use http://, not https://.<br><h4><span class=\"label label-warning image-tag ng-scope \">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
 			"categories": ["UC20-WL2000"],
 			"platform": "linux",
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-easyconnect-iiot-telemetry-beta.png",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-easyconnect-iiot/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-easyconnect-iiot/dev/2.0/docker-compose.yml"
 			},
 			"env": [{
 				"name": "ARTICLE_NAME",
@@ -82,9 +82,28 @@
 			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-procon-web-es.png",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-procon-web-es/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-procon-web-es/dev/2.0/docker-compose.yml"
 			}
 		}, {
+			"type": 3,
+			"title": "Node-RED for u-create web",
+			"description": "Flow-based programming tool",
+			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
+			"categories": ["UC20-WL2000", "IOT-GW30"],
+			"platform": "linux",
+			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-node-red-beta.svg",
+			"repository": {
+				"url": "https://github.com/weidmueller/uc-container-templates",
+				"stackfile": "stacks/uc-addon-node-red/dev/2.0/docker-compose.yml"
+			},
+			"env": [{
+				"name": "PORT",
+				"label": "Web Server Port",
+				"description": "The TCP port that the Node-RED web server is listening on.",
+				"default": "1881"
+			}]
+		}, 
+		{
 			"type": 3,
 			"title": "Debian for CODESYS",
 			"description": "Debian Bullseye Slim with CODESYS dependendcies",
@@ -108,29 +127,12 @@
 					"description": "Password of the Linux user. Also used for SSH."
 				},
 				{
-				"name": "SSHPORT",
-				"label": "SSH Server Port",
-				"description": "The TCP port that the SSH daemon is listening on.",
-				"default": "2222"
-			}]
-		}, {
-			"type": 3,
-			"title": "Node-RED for u-create web",
-			"description": "Flow-based programming tool",
-			"note": "This distribution of Node-RED includes Weidmüller's iodata nodes to access global variables.<h4><span class=\"label label-warning image-tag ng-scope\">You are on the development container registry! Images from this registry are not for production use!</span></h4>",
-			"categories": ["UC20-WL2000", "IOT-GW30"],
-			"platform": "linux",
-			"logo": "https://raw.githubusercontent.com/weidmueller/uc-container-templates/master/logos/uc-addon-node-red-beta.svg",
-			"repository": {
-				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-node-red/dev/1.0/docker-compose.yml"
-			},
-			"env": [{
-				"name": "PORT",
-				"label": "Web Server Port",
-				"description": "The TCP port that the Node-RED web server is listening on.",
-				"default": "1881"
-			}]
+					"name": "SSHPORT",
+					"label": "SSH Server Port",
+					"description": "The TCP port that the SSH daemon is listening on.",
+					"default": "2222"
+				}
+			]
 		},
 		{
 			"type": 3,
@@ -142,7 +144,7 @@
 			"platform": "linux",
 			"repository": {
 				"url": "https://github.com/weidmueller/uc-container-templates",
-				"stackfile": "stacks/uc-addon-teamviewer-iot/dev/1.0/docker-compose.yml"
+				"stackfile": "stacks/uc-addon-teamviewer-iot/dev/2.0/docker-compose.yml"
 			},
 			"env": [{
 					"name": "EULA_ACCEPTED",

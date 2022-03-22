@@ -1,0 +1,27 @@
+version: '2'
+services:
+    debian-bullseye-slim:
+        image: wmucdev.azurecr.io/debian:bullseye-codesys
+        privileged: true
+        environment: 
+          USER:    ${USER}
+          PASSWD:  ${PASSWD}
+          SSHPORT: ${SSHPORT}
+        volumes:
+         - debian-codesys-data:/data
+        network_mode: host
+        devices:
+         - "/dev/ttyAMA0:/dev/ttyAMA0" # RS232
+         - "/dev/ttyAMA1:/dev/ttyAMA1" # ???       
+         - "/dev/ttyAMA2:/dev/ttyAMA2" # RS485
+        cap_add:
+          - SYS_TTY_CONFIG # likely needed for configuration of serial interfaces, need to check this
+          - NET_ADMIN      # needed for CAN
+        restart: "on-failure"
+
+        # only needed if the debian container has no custom entrypoint 
+        # stdin_open: true   # docker run -i
+        # tty: true          # docker run -t
+
+volumes: 
+  debian-codesys-data: 

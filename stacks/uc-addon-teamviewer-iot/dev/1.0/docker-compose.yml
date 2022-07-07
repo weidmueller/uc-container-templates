@@ -4,7 +4,6 @@ services:
       image: wmucdev.azurecr.io/tviot-agent:2.17.3
       hostname: ${HOSTNAME}                             # Choose your own hostname
       container_name: uc_addon_teamviewer_iot_agent
-      cpu_quota: 80000
       restart: unless-stopped
       environment:
         EULA_ACCEPTED: ${EULA_ACCEPTED}
@@ -26,7 +25,6 @@ services:
     node-red:
       image: wmucdev.azurecr.io/uc-tviot-connector:1.0.3-1.0-alpha.1
       container_name: uc_addon_teamviewer_iot_connector 
-      cpu_quota: 25000
       restart: unless-stopped
       environment:
         SENSOR_NAME: ${SENSOR_NAME}                     # Name of the sensor as it is visible in TeamViewer IoT portal        

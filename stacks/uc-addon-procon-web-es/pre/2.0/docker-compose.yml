@@ -5,7 +5,6 @@ services:
     image: wmucrel.azurecr.io/uc-addon-procon-web-es:6.4.5-beta.2
     container_name: uc_addon_procon_web_es
     restart: unless-stopped
-    cpu_quota: 25000
     volumes:
       - uc_addon_procon_web_es:/root
     network_mode: "internal-bridge"
